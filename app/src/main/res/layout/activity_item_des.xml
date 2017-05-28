@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_item_des"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context="com.example.akki.timesinternet.ItemDes">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbarframe">
+
+        <include android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/toolbar"></include>
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:padding="2dp"
+        android:layout_below="@+id/toolbarframe"
+        android:layout_height="match_parent">
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.25dp"
+        android:background="#c0c0c0"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/imageViewid"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/view1" />
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/imageViewid"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:id="@+id/itemtextid" />
+
+    <TextView
+        android:textSize="25dp"
+        android:layout_width="wrap_content"
+        android:textStyle="bold"
+        android:paddingLeft="10dp"
+        android:textColor="#000000"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:id="@+id/pricetextid"
+        android:layout_below="@+id/itemtextid"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:textSize="18dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:id="@+id/typetextid"
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/pricetextid"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.25dp"
+        android:layout_marginTop="5dp"
+        android:background="#c0c0c0"
+        android:layout_below="@+id/typetextid"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        />
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:id="@+id/imageViewid"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>
+</RelativeLayout>

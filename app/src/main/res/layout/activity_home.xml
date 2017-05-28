@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    tools:context="com.example.akki.timesinternet.Home"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbarframe">
+
+        <include android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/toolbar"></include>
+    </FrameLayout>
+
+<RelativeLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_home"
+    android:layout_below="@+id/toolbarframe"
+    android:layout_width="match_parent"
+    tools:context="com.example.akki.timesinternet.Home"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.RecyclerView
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/recid"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
+</RelativeLayout>
