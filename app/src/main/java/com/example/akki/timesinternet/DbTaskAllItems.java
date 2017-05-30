@@ -33,21 +33,26 @@ public class DbTaskAllItems extends AsyncTask<Void,Void,String> {
     public ArrayList<String> iname;
     public ArrayList<String> ipiclink;
     public ArrayList<String> iid;
+    public ArrayList<String> iprice;
     RecyclerView rv ;
     CustomAdapter ca;
-    DbTaskAllItems(Context ctx,ArrayList<String> iname,ArrayList<String> ipiclink,ArrayList<String> iid,RecyclerView rv )
+    Activity activity;
+    DbTaskAllItems(Context ctx,ArrayList<String> iname,ArrayList<String> ipiclink,ArrayList<String> iid,ArrayList<String> iprice,RecyclerView rv,Activity activity,CustomAdapter ca )
     {
         this.ctx=ctx;
         this.iname=iname;
         this.ipiclink=ipiclink;
         this.iid=iid;
+        this.ca=ca;
+        this.iprice=iprice;
+        this.activity=activity;
         this.rv=rv;
     }
 
     @Override
     public String doInBackground(Void ...voids) {
 
-        String ip_url="http://calidad.getmeashop.com/calidad/api/v3/product/?format=json&limit=100&f=1%20&fields=i|sc|a|o%20|f|prs&loc_currency=INR";
+        String ip_url="http://calidad.getmeashop.com/calidad/api/v3/product/?format=json&limit=100&f=1%20&fields=i|sc|a|o%20|f|prs|d|p&loc_currency=INR";
 
         try {
 
@@ -102,9 +107,7 @@ public class DbTaskAllItems extends AsyncTask<Void,Void,String> {
             JSONObject j;
             JSONArray jsonArray;
 
-            ca = new CustomAdapter(ctx,iname,ipiclink,iid);
-         //   ca.clear();
-            String t, il ,id;
+            String t, il ,id,p;
             int count = 0;
             try {
 
@@ -113,15 +116,18 @@ public class DbTaskAllItems extends AsyncTask<Void,Void,String> {
 
                while (count < jsonArray.length()) {
                    JSONObject jo = jsonArray.getJSONObject(count);
+
                   t = jo.getString("t");
                    il = jo.getString("i");
                     id= jo.getString("id");
+                   p=jo.getString("p");
 
                    //    Toast.makeText(ctx,"" + t + " " + id + " ", Toast.LENGTH_LONG).show();
 
                     iname.add(t);
                     ipiclink.add(il);
                     iid.add(id);
+                   iprice.add(p);
 
                     count++;
                 }
